@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หนูจะหายงอนพี่มั้ยคับ🥺</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffe6f2; /* พื้นหลังสีชมพูอ่อน */
+            font-family: 'Arial', sans-serif; /* ฟอนต์ที่อ่านง่าย */
+            margin: 0;
+            padding: 0;
+            color: #333333; /* ฟอนต์ทั้งหมดเป็นสีดำ */
+        }
+        .container {
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: normal;
+            color: #000000; /* สีฟอนต์คำถามเป็นสีดำ */
+            font-family: 'Georgia', serif; /* ใช้ฟอนต์ที่ให้ความรู้สึกโรแมนติก */
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        button {
+            width: 200px;
+            height: 50px;
+            background-color: #ff99cc; /* ปุ่มสีชมพูอ่อน */
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            outline: none;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .yes-btn {
+            background-color: #ff66b2; /* สีชมพูเข้ม */
+        }
+        .no-btn {
+            background-color: #ff6666; /* สีแดงอ่อน */
+        }
+        button:hover {
+            background-color: #ff3385; /* ปรับสีปุ่มเมื่อ hover */
+        }
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+            font-family: 'Arial', sans-serif;
+            color: #ff66b2; /* สีฟอนต์เป็นสีชมพูเพื่อให้ดูโรแมนติก */
+        }
+    </style>
+</head>
+<body>
+    <audio id="bg-music" autoplay loop>
+        <source src="https://www.example.com/song.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <h1>หนูจะหายงอนพี่มั้ยคับ🥺</h1>
+        <div class="buttons">
+            <button class="yes-btn" onclick="forgive()">หายงอน🤍</button>
+            <button class="no-btn" id="no-btn" onclick="moveButton()">ไม่หายงอน😾</button>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function forgive() {
+            document.getElementById("message").innerText = "เย้! หนูหายงอนแล้ว~ 💕";
+        }
+
+        function moveButton() {
+            // ปรับตำแหน่งปุ่มเมื่อคลิก "ไม่หายงอน"
+            let button = document.getElementById("no-btn");
+            let x = Math.random() * (window.innerWidth - 200);  // ความกว้างของหน้าจอ - ขนาดปุ่ม
+            let y = Math.random() * (window.innerHeight - 50);  // ความสูงของหน้าจอ - ความสูงปุ่ม
+            button.style.position = 'absolute';  // เปลี่ยนตำแหน่งเป็น absolute
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+    </script>
+</body>
+</html>
